@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# GETS FILENAME AND EXTENSION FROM FIRST ARGUMENT
+FILENAME=$1
+EXTENSION="${FILENAME: -3}"
+
+# FILLS FILENAME WITH EXTENSION IF LAST CHARS WERE NOT GO EXTENSION
+if [ "$EXTENSION" != ".go" ]
+then
+	FILENAME="${FILENAME}.go"
+fi
+
+# GETS DIRECTORY(S) FROM FILENAME AND CREATES IT IF IT DID NOT EXIST BEFORE
+DIRECTORY=${FILENAME%/*}
+mkdir -p $DIRECTORY
+
+# CREATES GO BASE FILE WITH FILENAME
 printf "package main
 
 import (
@@ -9,4 +24,4 @@ import (
 func main() {
 	fmt.Println(\"\%bn----------------------\%bn\")
 }
-" > $(pwd)/$1.go
+" > $FILENAME
