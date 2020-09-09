@@ -10,6 +10,11 @@ then
 	FILENAME="${FILENAME}.go"
 fi
 
+if test -f "$FILENAME"; then
+    echo "$FILENAME already exists. Exiting program."
+    exit 0
+fi
+
 # GETS DIRECTORY(S) FROM FILENAME AND CREATES IT IF IT DID NOT EXIST BEFORE
 DIRECTORY=${FILENAME%/*}
 mkdir -p $DIRECTORY
