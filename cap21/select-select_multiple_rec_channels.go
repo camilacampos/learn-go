@@ -55,4 +55,4 @@ func receiveNumbers(par, impar chan int, quit chan bool) {
 // O número 0 é PAR.
 // CABÔ!
 
-// Solução no próximo exercício
+// Solução em: cap21/multiple_channels-comma_ok.go
