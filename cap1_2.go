@@ -5,6 +5,7 @@ import (
 )
 
 type hotdog int
+
 var flubs hotdog
 var flabs int
 

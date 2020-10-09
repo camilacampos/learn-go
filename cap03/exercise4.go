@@ -5,6 +5,7 @@ import (
 )
 
 type myType int
+
 var x myType
 
 func main() {

@@ -73,3 +73,32 @@ func ExampleSoma_quebrando() {
 // want:
 // 7
 // FAIL
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+
+// COVERAGE OUTPUT:
+
+// $ go test -cover
+
+// --- FAIL: TestSoma_Quebrado (0.00s)
+//     main_test.go:18: Expected: 6 Received: 5
+// --- FAIL: TestSoma_Tabela (0.00s)
+//     main_test.go:41: Expected: 101 Received: 100
+//     main_test.go:41: Expected: -7 Received: -5
+// --- FAIL: ExampleSoma_quebrando (0.00s)
+// got:
+// 6
+// want:
+// 7
+// FAIL
+// coverage: 100.0% of statements
+// exit status 1
+// FAIL    github.com/camilacampos/learn-go/cap27/testing_basics   0.505s
+
+// Salvar em um arquivo:
+// $ go test -coverprofile c.out
+
+// Pegar o arquivo gerado acima e exibir no browser:
+// $ go tool cover -html=c.out
